@@ -1,0 +1,22 @@
+# Phát hiện lỗi HTTP 404 lặp lại
+index=<tên_index> sourcetype=<tên_source> status="404"
+| stats count by clientip
+| where count > 5
+
+# Phát hiện truy cập đến các endpoint nhạy cảm
+index=<tên_index> sourcetype=<tên_source> uri_path IN ("/admin", "/login", "/config")
+| stats count by uri_path, clientip
+
+# Phát hiện các phương thức HTTP bất thường
+index=<tên_index> sourcetype=<tên_source> method IN ("PUT", "DELETE")
+| stats count by method, clientip
+
+# Phát hiện IP truy cập lặp lại
+index=<tên_index> sourcetype=<tên_source>
+| stats count by clientip
+| where count > 10
+
+# Phát hiện lỗi HTTP 500 lặp lại
+index=<tên_index> sourcetype=<tên_source> status="500"
+| stats count by clientip
+| where count > 3

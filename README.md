@@ -2,6 +2,8 @@
 
 Siem made for training purpose.
 
+"logs typically track incoming HTTP requests, providing details on each request's origin, timestamp, request type, resource accessed, HTTP status code, referrer, and user agent."
+
 Dự án **Home-made-SIEM** được xây dựng nhằm mục đích đào tạo và nghiên cứu về quản lý thông tin và sự kiện bảo mật (SIEM) cho bản thân tôi. 
 
 SIEM là viết tắt của Security Information and Event Management system . Đây là công cụ thu thập dữ liệu từ nhiều điểm cuối/thiết bị mạng khác nhau trên toàn mạng, lưu trữ chúng tại một nơi tập trung và thực hiện tương quan trên chúng.
